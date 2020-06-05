@@ -13,9 +13,13 @@
 		 
 	app.route('/atendimentos/')
 		 .get(app.api.atendimentos.atendimentos);
+		
+	 app.route('/atendimento/')
+		 .post(app.api.atendimentos.novoatendimento);
 
      app.route('/login/')
 		 .get(app.api.empregados.login);
+
 	
 
 

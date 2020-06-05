@@ -23,5 +23,10 @@ api._idPaciente = function(req,res,next){
  	
 };
 
+api.newpacientes = function(req, res) {
+	console.log(req.body)
+}
+
+
 
 module.exports = api;
