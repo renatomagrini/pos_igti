@@ -1,27 +1,25 @@
-const validaLogin = require('../model/validaLogin');
+var fs = require('fs');
 
 let api = {};
 
-var empregados
- = [
-    {_idEmpregado: 0, nome:'Dr. Renato .',login :'renato', password: 1234 },
-	{_idEmpregado: 1, nome:'Dr. Valdir', login :'valdir', password: 1234  },
-	{_idEmpregado: 2, nome:'Dr. Aparecida', login :'aparecida', password: 1234  },
-	{_idEmpregado: 3, nome:'Dr Leo', login :'leo', password: 1234  }
-	];
+
 
 api.empregados = function(req, res) {
 
-	setTimeout(function(){
-        if(req.query.id) return res.json(empregados[req.query.id]);
+    fs.readFile("cadEmpregados.json","utf-8",function(err,data){
+
+        setTimeout(function(){
+            if(req.query.id) return res.json(data[req.query.id]);
+            
+            res.json(JSON.parse(data));
+        },1500);
         
-		res.json(empregados);
-	},1500);
+    })
 
 };
 
-api.login = () =>{
-    console.log('estou na tela de login')
+api.login = (req, res) =>{
+    
 }
 
 

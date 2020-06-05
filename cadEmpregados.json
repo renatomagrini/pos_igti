@@ -1,0 +1,6 @@
+[
+    {"idEmpregado": 0, "nome":"Dr. Renato ","login" :"renato", "password": 1234 },
+    {"idEmpregado": 1, "nome":"Dr. Carlos ","login" :"carlos", "password": 1234 },
+    {"idEmpregado": 2, "nome":"Dr. João ","login" :"joao", "password": 1234 },
+    {"idEmpregado": 3, "nome":"Dr. Magrini ","login" :"magrini", "password": 1234 }
+]
