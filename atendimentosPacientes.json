@@ -1,15 +1,15 @@
-[
-    {
-    "idEmpregado": 0 ,
-    "idPaciente": 1 ,
-    "historico": "foi realizado um atendimento x y e z", 
-    "dataAtendimento": "07/05/2020" 
-    },
-    {
-        "idEmpregado": 2 ,
-        "idPaciente": 3 ,
+{
+   "atendimento":[
+        {"idEmpregado": 0 ,
+        "idPaciente": 1 ,
         "historico": "foi realizado um atendimento x y e z", 
-        "dataAtendimento": "17/05/2020" 
+        "dataAtendimento": "07/05/2020" 
+        },
+        {"idEmpregado": 2 ,
+         "idPaciente": 3 ,
+         "historico": "foi realizado um atendimento x y e z", 
+          "dataAtendimento": "17/05/2020" 
 
-    }
-]
+        }
+    ]
+}

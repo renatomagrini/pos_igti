@@ -1,3 +1,4 @@
+const cors = require('cors');
 var fs = require('fs');
 let api = {};
 
@@ -5,6 +6,7 @@ let api = {};
 
 
 api.pacientes = function(req, res) {
+	res.header("Access-Control-Allow-Origin", "*");
 	fs.readFile("cadPacientes.json","utf-8",function(err,data){			
 			setTimeout(function(){
 				if(req.query.id) return res.json(data[req.query.id]);
@@ -15,6 +17,7 @@ api.pacientes = function(req, res) {
 };
 
 api._idPaciente = function(req,res,next){
+	res.header("Access-Control-Allow-Origin", "*");
 	fs.readFile("cadPacientes.json","utf-8",function(err,data){	
 		let json = JSON.parse(data);
 		let paciente = json.find(paciente => paciente.idPaciente == req.params.id)

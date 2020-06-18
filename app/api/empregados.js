@@ -1,8 +1,10 @@
+
 var fs = require('fs');
 
 let api = {};
 
 api.empregados = function(req, res) {
+
     fs.readFile("cadEmpregados.json","utf-8",function(err,data){
 
         setTimeout(function(){
