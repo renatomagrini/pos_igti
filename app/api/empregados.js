@@ -15,8 +15,5 @@ api.empregados = function(req, res) {
     })
 };
 
-api.login = (req, res) =>{
-    
-}
 
 module.exports = api;

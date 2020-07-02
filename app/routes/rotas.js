@@ -18,7 +18,7 @@
 		 .post(app.api.atendimentos.novoatendimento);
 
      app.route('/login/')
-		 .get(app.api.empregados.login);
+		 .post(app.api.login.login);
 
 	
 
