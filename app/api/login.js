@@ -2,24 +2,17 @@ var fs = require('fs');
 
 let api = {};
 
-api.empregados = function(req, res) {
-
-    fs.readFile("cadEmpregados.json","utf-8",function(err,data){
-
-        setTimeout(function(){
-            if(req.query.id) return res.json(data[req.query.id]);
-            
-            res.json(JSON.parse(data));
-        },1500);
-    })
-};
-
 api.login = (req, res) =>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header("Access-Control-Allow-Headers", "	Origin, X-Requested-With, Content-Type, Accept");
+
+    console.log("chamou o post")
 let username = req.body.username.toLowerCase()
 let password = req.body.password
 
-console.loh(username)
-console.loh(password)
+console.log(username)
+console.log(password)
 
 
 fs.readFile("cadEmpregados.json","utf-8",function(err,data){	
