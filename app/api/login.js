@@ -7,7 +7,6 @@ api.login = (req, res) =>{
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header("Access-Control-Allow-Headers", "	Origin, X-Requested-With, Content-Type, Accept");
 
-    console.log("chamou o post")
 let username = req.body.username.toLowerCase()
 let password = req.body.password
 
@@ -25,11 +24,12 @@ fs.readFile("cadEmpregados.json","utf-8",function(err,data){
     return
  }
 
- if(resp.password == password){
-    
+ if(resp.password == password){    
     delete resp.password
     res.send(resp)
- }else res.send('Senha Incorreta')
+ }
+ 
+ else res.send('Senha Incorreta')
 })
     
 }

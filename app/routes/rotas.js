@@ -13,14 +13,15 @@
 		 
 	app.route('/atendimentos/')
 		 .get(app.api.atendimentos.atendimentos);
+		 
+	app.route('/cadastro_paciente/:id')
+		 .get(app.api.pacientes.dataPacientes);
 		
-	 app.route('/atendimento/')
+	 app.route('/novo_atendimento/')
 		 .post(app.api.atendimentos.novoatendimento);
 
      app.route('/login/')
 		 .post(app.api.login.login);
-
-	
 
 
 };

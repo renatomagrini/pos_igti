@@ -12,8 +12,7 @@
          "resumo": "teste",
          "historico": "foi realizado um atendimento x y e z", 
           "dataAtendimento": "17/05/2020",
-          "evolucao":10  
-
+          "evolucao":10            
         }
     ]
 }

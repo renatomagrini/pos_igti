@@ -1,6 +1,7 @@
 const cors = require('cors');
 var fs = require('fs');
 let api = {};
+var dataAtual = require('../helpers/dataAtual')
 
 
 
@@ -23,13 +24,23 @@ api._idPaciente = function(req,res,next){
 		let paciente = json.find(paciente => paciente.idPaciente == req.params.id)
 		res.send(paciente);
 	})
- 	
 };
 
 api.newpacientes = function(req, res) {
 	console.log(req.body)
 }
 
+api.dataPacientes =  function(req, res) {
+	res.header("Access-Control-Allow-Origin", "*");
+	fs.readFile("dataPacientes.json","utf-8",function(err,data){	
+		let json = JSON.parse(data);
+		let paciente = json.find(paciente => paciente.idPaciente == req.params.id)
+		res.send(paciente);
+		console.log(dataAtual())
+
+
+	})
+}
 
 
 module.exports = api;
