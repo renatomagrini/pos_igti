@@ -1,6 +1,5 @@
-var http = require('http');
 var app = require('./config/express');
-const PORT = process.env.port||'8080';
+const PORT = process.env.PORT||'8080';
 
 
 var server = app.listen(PORT, function () {

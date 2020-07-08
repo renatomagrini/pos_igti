@@ -4,6 +4,11 @@
 
 	app.route('/pacientes/')
 		.get(app.api.pacientes.pacientes);
+
+		app.route('/')
+		.get(function(req, res, next){
+			res.sendStatus(200);
+	});
 	
 	app.route('/pacientes/:id')
 		.get(app.api.pacientes._idPaciente);
