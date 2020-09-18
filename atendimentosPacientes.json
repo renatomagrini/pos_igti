@@ -1,5 +1,4 @@
-{
-   "atendimentos":[
+[
         {"idEmpregado": 0 ,
         "idPaciente": 1 ,
         "resumo": "teste",
@@ -12,14 +11,14 @@
           "resumo": "teste1",
           "historico": "foi realizado um atendimento x y e z", 
           "dataAtendimento": "07/06/2020",
-          "evolucao":10 
+          "evolucao":20 
         },
         {"idEmpregado": 0 ,
             "idPaciente": 1 ,
             "resumo": "teste2",
             "historico": "foi realizado um atendimento x y e z", 
             "dataAtendimento": "07/07/2020",
-            "evolucao":10 
+            "evolucao":30 
         },
         {"idEmpregado": 2 ,
          "idPaciente": 3 ,
@@ -29,4 +28,3 @@
           "evolucao":10            
         }
     ]
-}
