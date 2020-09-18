@@ -21,11 +21,12 @@
     "nedb": "^1.1.2"
   },
   "dependencies": {
-    "cors": "^2.8.5",
     "body-parser": "*",
     "consign": "^0.1.2",
+    "cors": "^2.8.5",
     "express": "*",
-    "nedb": "^1.1.2"
+    "nedb": "^1.1.2",
+    "nodemon": "^2.0.4"
   },
   "repository": {
     "type": "git",

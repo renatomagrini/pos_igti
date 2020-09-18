@@ -21,7 +21,8 @@
 		 
 	app.route('/cadastro_paciente/:id')
 		 .get(app.api.pacientes.dataPacientes);
-		
+
+
 	 app.route('/novo_atendimento/')
 		 .post(app.api.atendimentos.novoatendimento);
 

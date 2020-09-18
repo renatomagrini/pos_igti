@@ -6,6 +6,7 @@ var fs = require('fs');
 let api = {};
 
 api.atendimentos = function(req, res) {
+	res.header("Access-Control-Allow-Origin", "*");
 
 	fs.readFile("atendimentosPacientes.json","utf-8",function(err,data){
 			
@@ -20,6 +21,7 @@ api.atendimentos = function(req, res) {
 
 
 api.novoatendimento = function(req, res) {
+	res.header("Access-Control-Allow-Origin", "*");
 	console.log(req.body)
 	fs.readFile("atendimentosPacientes.json","utf-8",function(err,data){
 	let novo = data + req.body;

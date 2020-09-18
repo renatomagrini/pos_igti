@@ -4,6 +4,7 @@ var fs = require('fs');
 let api = {};
 
 api.empregados = function(req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
 
     fs.readFile("cadEmpregados.json","utf-8",function(err,data){
 

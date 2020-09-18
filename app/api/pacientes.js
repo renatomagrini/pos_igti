@@ -36,11 +36,15 @@ api.dataPacientes =  function(req, res) {
 		let json = JSON.parse(data);
 		let paciente = json.find(paciente => paciente.idPaciente == req.params.id)
 		res.send(paciente);
-		console.log(dataAtual())
-
 
 	})
 }
+
+
+
+
+
+
 
 
 module.exports = api;
