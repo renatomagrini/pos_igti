@@ -1,5 +1,3 @@
-
-
 var fs = require('fs');
 
 
@@ -17,6 +15,32 @@ api.atendimentos = function(req, res) {
 			},1500);			
 		})
 
+};
+
+api.pacEmpAtendimentos= function(req,res,next){
+	res.header("Access-Control-Allow-Origin", "*");
+	
+	console.log(req.params.idP)
+	console.log(req.params.idE)
+	
+	fs.readFile("atendimentosPacientes.json","utf-8",function(err,data){	
+		let json = JSON.parse(data);
+		let atendimento = json.filter(atendimento => atendimento.idPaciente == req.params.idP && atendimento.idEmpregado == req.params.idE)
+		res.send(atendimento)			
+	})
+};
+
+api.empAtendimentos= function(req,res,next){
+	res.header("Access-Control-Allow-Origin", "*");
+	
+	console.log(req.params.idE)
+	
+	fs.readFile("atendimentosPacientes.json","utf-8",function(err,data){	
+		let json = JSON.parse(data);
+		let atendimento = json.filter(atendimento => atendimento.idEmpregado == req.params.idE)
+		res.send(atendimento)		
+
+	})
 };
 
 
