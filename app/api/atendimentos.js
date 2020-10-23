@@ -46,12 +46,69 @@ api.empAtendimentos= function(req,res,next){
 
 api.novoatendimento = function(req, res) {
 	res.header("Access-Control-Allow-Origin", "*");
-	console.log(req.body)
-	fs.readFile("atendimentosPacientes.json","utf-8",function(err,data){
-	let novo = data + req.body;
-	res.json(novo);
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	res.header("Access-Control-Allow-Headers", "	Origin, X-Requested-With, Content-Type, Accept");
 
-	})
+	let dados = req.body;
+
+	let idPaciente = req.body.idPaciente
+	let idEmpregado = req.body.idEmpregado
+	let evolucao = req.body.evolucao
+	let resumo = req.body.resumo
+	let atendimento = req.body.atendimento
+	let proximoAtendimento = req.body.proximoAtendimento
+	let dataAtual = now.getDay() + "/" + now.getMonth() + "/" + now.getFullYear() 
+
+	delete dados.proximoAtendimento
+	dados.dataAtendimento = dataAtual
+
+//	console.log(dados)
+
+
+//salva novo atendimento
+fs.readFile("atendimentosPacientes.json","utf-8",function(err,data){	
+	let json = JSON.parse(data);
+	json.push(dados)
+	//console.log(json)
+	newJson =  JSON.stringify(json);
+	
+
+	/*
+	fs.writeFile('atendimentosPacientes.json', newJson,'utf8',function(err) {
+    if (err) throw err;
+    console.log('complete');
+    }
+	);
+
+	*/
+})
+
+fs.readFile("cadPacientes.json","utf-8",function(err,data){	
+	let json = JSON.parse(data);
+	let paciente = json.find(paciente => paciente.idPaciente == req.body.idPaciente)
+	let id = paciente.idPaciente
+	json[id].ultimoAtendimento=dataAtual;
+	json[id].proximoAtendimento=proximoAtendimento;
+	json[id].evolucao=evolucao;
+
+	newJson =  JSON.stringify(json);
+
+	fs.writeFile('cadPacientes.json', newJson,'utf8',function(err) {
+    if (err) throw err;
+    console.log('complete');
+    }
+	);
+	
+})
+
+
+
+
+
+
+
+	res.send("ok");
+
 
 
 }
