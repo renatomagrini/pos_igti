@@ -26,6 +26,15 @@ api._idPaciente = function(req,res,next){
 	})
 };
 
+api._idEmpregado = function(req,res,next){
+	res.header("Access-Control-Allow-Origin", "*");
+	fs.readFile("cadPacientes.json","utf-8",function(err,data){	
+		let json = JSON.parse(data);
+		let paciente = json.filter(paciente => paciente.idEmpregado == req.params.id)
+		res.send(paciente);
+	})
+};
+
 api.newpacientes = function(req, res) {
 	console.log(req.body)
 }

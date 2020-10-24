@@ -13,6 +13,9 @@
 	app.route('/pacientes/:id')
 		.get(app.api.pacientes._idPaciente);
 
+	app.route('/pacientes_emp/:id')
+		.get(app.api.pacientes._idEmpregado);
+
  	app.route('/empregados/')
 		 .get(app.api.empregados.empregados);
 		 
