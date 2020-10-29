@@ -1,6 +1,4 @@
 [
     {"idEmpregado": 0, "nome":"Dr. Renato Dominato Magrini","login" :"renato", "password": 123456 },
-    {"idEmpregado": 1, "nome":"Dr. Carlos Alberto","login" :"carlos", "password": 123456 },
-    {"idEmpregado": 2, "nome":"Dr. João Pedro","login" :"joao", "password": 123456 },
-    {"idEmpregado": 3, "nome":"Dr. Valdirzinho ","login" :"magrini", "password": 123456 }
+    {"idEmpregado": 1, "nome":"Dr. Carlos Alberto","login" :"carlos", "password": 123456 }
 ]
