@@ -59,12 +59,12 @@ api.novoatendimento = function(req, res) {
 	let proximoAtendimento = req.body.proximoAtendimento
 	let dataAtual = now.getDay() + "/" + now.getMonth() + "/" + now.getFullYear() 
 
+	let dadosPaciente = dados;
+
 	delete dados.proximoAtendimento
 	dados.dataAtendimento = dataAtual
 
-	console.log(dados)
-
-
+//	console.log(proximoAtendimento)
 
 
 //salva novo atendimento
@@ -74,8 +74,6 @@ fs.readFile("atendimentosPacientes.json","utf-8",function(err,data){
 	//console.log(json)
 	newJson =  JSON.stringify(json);
 
-
-	
 	fs.writeFile('atendimentosPacientes.json', newJson,'utf8',function(err) {
     if (err) throw err;
     console.log('complete');
@@ -94,10 +92,10 @@ fs.readFile("cadPacientes.json","utf-8",function(err,data){
 	json[id].proximoAtendimento=proximoAtendimento;
 	json[id].evolucao=evolucao;
 
-	newJson =  JSON.stringify(json);
+	newJson1 =  JSON.stringify(json);
 
 		
-	fs.writeFile('cadPacientes.json', newJson,'utf8',function(err) {
+	fs.writeFile('cadPacientes.json', newJson1,'utf8',function(err) {
     if (err) throw err;
     console.log('complete');
     }
